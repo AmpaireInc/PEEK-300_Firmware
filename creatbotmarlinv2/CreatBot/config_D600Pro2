@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+TOOL=buildroot/bin/use_creatbot_configs
+
+$TOOL "release:CreatBot/D600 Pro2"

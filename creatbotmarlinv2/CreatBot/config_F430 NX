@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+TOOL=buildroot/bin/use_creatbot_configs
+
+$TOOL "release:CreatBot/F430 NX"

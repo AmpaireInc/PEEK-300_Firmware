@@ -1,0 +1,17 @@
+---
+Language: Cpp
+BasedOnStyle: Google
+
+AlignConsecutiveMacros: AcrossEmptyLines
+AlignConsecutiveAssignments: AcrossEmptyLines
+AlignConsecutiveBitFields: Consecutive
+AlignConsecutiveDeclarations: Consecutive
+AlignEscapedNewlines: Right
+AllowShortCaseLabelsOnASingleLine: true
+PointerAlignment: Right
+ColumnLimit: 120
+IndentExternBlock: Indent
+IndentPPDirectives: BeforeHash
+NamespaceIndentation: All
+TabWidth: 2
+...

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+buildroot/bin/use_creatbot_configs

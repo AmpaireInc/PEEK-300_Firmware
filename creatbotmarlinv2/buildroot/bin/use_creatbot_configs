@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+#
+# use_creatbot_configs [repo:]configpath
+#
+# Examples:
+#   use_creatbot_configs
+#   use_creatbot_configs CreatBot/F430
+#   use_creatbot_configs RTM01:CreatBot/F430
+#
+# If a configpath has spaces (or quotes) escape them or enquote the path
+#
+
+REPOHOME="`dirname ~/.`"
+MARLINREPO="$REPOHOME/CreatBotMarlin"
+CONFIGREPO="$REPOHOME/CreatBotMarlinConfig"
+
+REPO=develop
+
+if [[ $# > 0 ]]; then
+  IFS=: read -r PART1 PART2 <<< "$@"
+  [[ -n $PART2 ]] && { UDIR="$PART2" ; REPO="$PART1" ; } \
+                  || { UDIR="$PART1" ; }
+  echo "Fetching $UDIR configurations from $REPO..."
+  EXAMPLES="examples/$UDIR"
+else
+  EXAMPLES="default"
+fi
+
+cd $CONFIGREPO
+
+SRCFILE="config/$EXAMPLES/Configuration.h"
+TARFILE="$MARLINREPO/Marlin/Configuration.h"
+git checkout -f $REPO -- "$SRCFILE" >/dev/null 2>&1 && cp "$SRCFILE" "$TARFILE"
+
+SRCFILE="config/$EXAMPLES/Configuration_adv.h"
+TARFILE="$MARLINREPO/Marlin/Configuration_adv.h"
+git checkout -f $REPO -- "$SRCFILE" >/dev/null 2>&1 && cp "$SRCFILE" "$TARFILE"
+
+SRCFILE="config/$EXAMPLES/_Bootscreen.h"
+TARFILE="$MARLINREPO/Marlin/_Bootscreen.h"
+git checkout -f $REPO -- "$SRCFILE" >/dev/null 2>&1 && cp "$SRCFILE" "$TARFILE"
+
+SRCFILE="config/$EXAMPLES/_Statusscreen.h"
+TARFILE="$MARLINREPO/Marlin/_Statusscreen.h"
+git checkout -f $REPO -- "$SRCFILE" >/dev/null 2>&1 && cp "$SRCFILE" "$TARFILE"
+
+rm -f wgot
+cd - >/dev/null

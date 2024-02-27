@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+export PATH="~/.platformio/penv/Scripts:$PATH"
+export PATH="./buildroot/bin/:$PATH"
+
+EXPORT_DIR=.pio/build/CreatBot_F446
+
+set -e
+exec_release() {
+  printf "\n\033[0;32m[release $1...]\033[0m\n"
+  if platformio run --project-dir . -e CreatBot_F446 --silent; then
+    printf "\033[0;32mPassed\033[0m rename...\n"
+    mv "$EXPORT_DIR/firmware.bin" "$EXPORT_DIR/../$1.bin"
+    return 0
+  else
+    restore_configs
+    printf "\033[0;31mFailed!\033[0m\n"
+    return 1
+  fi
+}
+export -f exec_release
+
+use_creatbot_configs "release:CreatBot/F430"
+exec_release "EN CreatBot F430"
+
+use_creatbot_configs "release:CreatBot/D600 Pro"
+exec_release "EN CreatBot D600 Pro"
+
+use_creatbot_configs "release:CreatBot/D600 Pro2"
+exec_release "EN CreatBot D600 Pro2"
+
+use_creatbot_configs "release:CreatBot/D1000"
+exec_release "EN CreatBot D1000"
+
+use_creatbot_configs "release:CreatBot/F430 NX"
+exec_release "EN CreatBot F430 NX"
+
+use_creatbot_configs "release:CreatBot/PEEK-300"
+exec_release "EN CreatBot PEEK-300"
+
+use_creatbot_configs "release:CreatBot/PEEK-250"
+exec_release "EN CreatBot PEEK-250"
+
+use_creatbot_configs "release:CreatBot/F200"
+exec_release "EN CreatBot F200"
+
+restore_configs
