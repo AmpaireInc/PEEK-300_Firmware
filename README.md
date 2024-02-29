@@ -13,4 +13,7 @@ todo:
             adaptive step smoothing
             DGUS display options
             Direct Stepping / Step Daemon
-            Trinamic Smart Drivers
+
+    enable: TMC Debug
+
+    modify: Bed leveling - remove 'extend mesh' option
