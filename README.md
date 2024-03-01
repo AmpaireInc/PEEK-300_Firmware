@@ -17,3 +17,5 @@ todo:
     enable: TMC Debug
 
     modify: Bed leveling - remove 'extend mesh' option
+
+    update: M code defaults from M503 export
