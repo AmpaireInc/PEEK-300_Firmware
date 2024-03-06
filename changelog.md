@@ -60,7 +60,7 @@ Date:   Tue Feb 27 10:06:35 2024 -0800
 
 ### General Info
 
-# command for updating changelog:
+# command for updating changelog.  Input last main commit hash and run from MAIN after pushing a tag for a release:
 git log <last main commit>..main --decorate=short --abbrev-commit --first-parent main | cat - changelog.md > temp && mv temp changelog.md
 
 

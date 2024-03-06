@@ -14,8 +14,8 @@ todo:
             DGUS display options
             Direct Stepping / Step Daemon
 
-    enable: TMC Debug
+    enable: TMC Debug - done
 
-    modify: Bed leveling - remove 'extend mesh' option
+    modify: Bed leveling - remove 'extend mesh' option - done
 
     update: M code defaults from M503 export
