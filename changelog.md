@@ -1,3 +1,28 @@
+### Ampaire PEEK-300 v2.1.2.1_A2
+commit c16596a (HEAD -> main, origin/working, origin/main, working)
+Author: Joshua Jacobs <joshua.jacobs@ampaire.com>
+Date:   Tue Mar 5 17:48:45 2024 -0800
+
+    feat: disable preheat before probing and preheat before leveling
+         disable extrapolate mesh option
+         increase slowdown_divisor to 4 from 2
+
+commit 1bb6ee1
+Author: Joshua Jacobs <joshua.jacobs@ampaire.com>
+Date:   Thu Feb 29 18:32:13 2024 -0800
+
+    chore: add changelog
+
+commit 369acc9
+Author: Joshua Jacobs <joshua.jacobs@ampaire.com>
+Date:   Thu Feb 29 16:51:07 2024 -0800
+
+    feat: enable TMC Debug
+         enable G26 mesh validation
+         disable extrapolate beyond grid
+         reduce probing margin to 1, bed larger than travel
+         decrease Hybrid Threshold
+         enable stealthChop for XY
 
 
 
