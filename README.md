@@ -8,14 +8,7 @@ This repo has been created to customize Marlin for use on the CreatBot PEEK-300.
 todo:
 
     explore: S-curve, 
-            input shaping,
-            linear advance, 
-            adaptive step smoothing
             DGUS display options
             Direct Stepping / Step Daemon
-
-    enable: TMC Debug - done
-
-    modify: Bed leveling - remove 'extend mesh' option - done
 
     update: M code defaults from M503 export
